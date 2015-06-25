@@ -29,6 +29,19 @@ var Auth = {
     }, 
     
     readHash: function(hash){
-        console.log('oauth response: ', hash); 
+        console.log('oauth response: ', hash);
+        var data = this.parseHash(hash);
+        console.log('extracted data drom hash string: ', data); 
+    }, 
+    parseHash: function (str){
+        var data = {}; 
+        
+        str.split('&').map(function(kv){
+            var kvPair = kv.split('='); 
+            data[kvPair[0]] = kvPair[1]; 
+        }); 
+        
+        return data; 
+      
     }
 }
