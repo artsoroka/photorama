@@ -13,7 +13,7 @@ var Auth = {
     }, 
     getVkAuthUrl:  function(){
         var credentials = JSON.parse( document.getElementById('vk_login').dataset.credentials ); 
-        var base_url = 'https://oauth.vk.com/authorize?response_type=token'; 
+        var base_url = 'https://oauth.vk.com/authorize?response_type=code'; 
         var query = []; 
         for(var property in credentials){
             if(typeof property == 'object'){
